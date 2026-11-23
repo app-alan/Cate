@@ -1,0 +1,9 @@
+{
+  "name": "",
+  "session_minutes": 50,
+  "warn_minutes": 45,
+  "slots": [],
+  "backup_dir": "",
+  "setup_stage": "1",
+  "setup_complete": false
+}

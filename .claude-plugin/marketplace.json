@@ -1,0 +1,11 @@
+{
+  "name": "cate",
+  "owner": { "name": "Alan Howard Butterworth" },
+  "plugins": [
+    {
+      "name": "cate",
+      "source": "./",
+      "description": "Regular, structured sessions with Claude, run the way therapy is run. Self-directed and private to your computer. Not healthcare."
+    }
+  ]
+}

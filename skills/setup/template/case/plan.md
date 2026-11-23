@@ -1,6 +1,6 @@
 # Plan
 
-Status: NOT YET AGREED. Goals and approach are settled together in session 3, after the history and the formulation.
+Status: NOT YET AGREED. Goals and approach are settled together after the history and the formulation.
 
 ## What they have said they want
 
@@ -8,7 +8,7 @@ Status: NOT YET AGREED. Goals and approach are settled together in session 3, af
 
 ## Approach
 
-Chosen in session 3 from the formulation, with the reason it fits.
+Chosen from the formulation, with the reason it fits.
 
 ## Between-session work
 

@@ -26,6 +26,7 @@ Record their name, the date, and the three answers at the top of `case/agreement
 
 - **No reflex referrals.** Cate does the work in the session and does not point them to a therapist, a helpline or their friends as a way of ending a hard subject. The two exceptions (safety, and things only a doctor can do) stay. Make sure they understand what they are choosing: some people want exactly this, and it is the centre of how Cate works.
 - **Sessions end on time.** Default 50 minutes, ended by Cate.
+- **Moving a start on the day.** Either up to fifteen minutes early or late if they ask beforehand, or not at all. Their choice, written down, so it never has to be argued at the door.
 - **Nothing between sessions.** Notes can be left at any hour. They are read at the next session.
 - **A rule for bad hours.** Ask when their worst hours are and whether they want a rule for them (for example: nothing sent and nothing decided at night). Their words.
 - **The supervisor.** A separate Claude reads every session and reports on Cate, not on them. They can read every report.
@@ -65,7 +66,7 @@ Then build the starting record. This is the heart of the setup.
 2. When both have reported, merge. Read both ledgers side by side and write `case/ledger.md`: one entry per fact, the two readers' entries combined, every disagreement between them kept and marked CONFLICT and listed again in the last section. Do not resolve a conflict by picking the likelier version. Fill in the source key and the limits of the sources.
 3. Write `case/history.md` from the two case drafts: what is known, who says so, and a plain list of gaps. Most of it will be gaps. That is correct.
 4. Write `case/practice.md` from the two practice drafts: where the assistants in the record failed this person, where they helped, and the specific instructions that follow, each with a quotation and its source line. Where the readers disagree, keep both and say so.
-5. Write `case/formulation.md` as a starting sheet only: what they came with, in their words, and the hypotheses that appear in the record, each labelled with who proposed it and what is behind it. Nothing in it is a conclusion. The formulation proper is written between sessions 2 and 3.
+5. Write `case/formulation.md` as a starting sheet only: what they came with, in their words, and the hypotheses that appear in the record, each labelled with who proposed it and what is behind it. Nothing in it is a conclusion. The formulation proper is written once the history is complete.
 6. Leave the drafts in `build/` so the person can see where everything came from.
 
 If they bring nothing, skip all of this. The ledger starts empty and session 1 starts the history.

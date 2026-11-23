@@ -56,7 +56,7 @@ Then run `/cate:setup`. It creates a private folder (by default `~/Cate`). Open 
 
 **Your history** is optional. You can bring in earlier conversations with Claude or ChatGPT, or anything you have written. You choose which. Two readers go through it independently and build a ledger of what happened and a report on how the AI you were talking to handled you: where it folded, where it deflected, what it got wrong, what helped. That report becomes part of Cate's instructions for working with you.
 
-**Sessions** start at the time you booked and end fifty minutes later. The first two take a proper history. Before the third, Cate writes down its working understanding of what is going on, with the evidence for and against, and you correct it. The eighth is a review.
+**Sessions** start at the time you booked and end fifty minutes later. The first two or three take a proper history. Once that is done, Cate writes down its working understanding of what is going on, with the evidence for and against, and you correct it. The eighth is a review.
 
 **After each session** Cate writes its notes, updates the record, saves a word-for-word transcript and hands the session to the supervisor.
 
@@ -73,6 +73,10 @@ Then run `/cate:setup`. It creates a private folder (by default `~/Cate`). Open 
 The rules Cate works under are in `CLAUDE.md` in your folder, in plain English, with the reason for each one. Read them. Change them if you disagree. The one request is that you raise a change with Cate first and let it argue.
 
 Two things are built as a floor: Cate stops and asks if you may be in danger, and it tells you once if something needs a doctor.
+
+## Passing a lesson back
+
+Your supervisor's reports stay in your folder. Nothing reports back to this project, so Cate only gets better for other people if someone says what they learned. If your supervisor proposes a rule change that would help anyone, and not only you, open an issue on GitHub with the rule and the fault it answers. Leave out everything personal: the rule and the kind of mistake are enough.
 
 ## Limits worth knowing
 

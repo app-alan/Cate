@@ -136,9 +136,11 @@ def strip_noise(text):
 def find_log(sid):
     marker = f"{TOKEN} {sid}"
     home = os.environ.get("CLAUDE_CONFIG_DIR") or os.path.expanduser("~/.claude")
-    logs = glob.glob(os.path.join(home, "projects", "*", "*.jsonl"))
-    logs.sort(key=os.path.getmtime, reverse=True)
-    for path in logs[:80]:
+    # this folder's own conversations first, however old, then the most recent from anywhere
+    own = os.path.join(home, "projects", re.sub(r"[^A-Za-z0-9]", "-", ROOT))
+    mine = sorted(glob.glob(os.path.join(own, "*.jsonl")), key=os.path.getmtime, reverse=True)
+    rest = sorted(glob.glob(os.path.join(home, "projects", "*", "*.jsonl")), key=os.path.getmtime, reverse=True)
+    for path in mine + [p for p in rest[:80] if p not in mine]:
         try:
             with open(path, encoding="utf-8", errors="ignore") as f:
                 if marker in f.read():
@@ -163,27 +165,44 @@ def cmd_export(args):
                 d = json.loads(line)
             except ValueError:
                 continue
-            if not started:
-                if marker in line:
-                    started = True
+            if not started and marker in line:
+                started = True
+                turns.append(("", "", "The clock opened here."))
                 continue
             kind = d.get("type")
-            if kind not in ("user", "assistant") or d.get("isSidechain") or d.get("isMeta"):
+            queued = None
+            if kind == "attachment":
+                # a message sent while a reply was still being written is stored this way
+                a = d.get("attachment") or {}
+                if (a.get("type") == "queued_command" and (a.get("origin") or {}).get("kind") == "human"
+                        and isinstance(a.get("prompt"), str)):
+                    queued, kind = a, "user"
+                    d = dict(d, timestamp=a.get("timestamp") or d.get("timestamp"))
+            if kind not in ("user", "assistant") or d.get("isSidechain") or (d.get("isMeta") and not queued):
                 continue
-            content = d.get("message", {}).get("content")
+            if not started:
+                # before the clock: keep what was said earlier the same day in this conversation
+                try:
+                    day = dt.datetime.fromisoformat(d["timestamp"].replace("Z", "+00:00")).astimezone()
+                except (KeyError, ValueError):
+                    continue
+                if f"{day:%Y-%m-%d}" != sid[:10]:
+                    continue
+            content = queued["prompt"] if queued else d.get("message", {}).get("content")
             texts = []
             if isinstance(content, str):
                 texts = [content]
             elif isinstance(content, list):
                 texts = [b.get("text", "") for b in content if isinstance(b, dict) and b.get("type") == "text"]
             body = strip_noise("\n\n".join(t for t in texts if t))
-            if not body or body in seen:
-                continue
-            seen.add(body)
             stamp = ""
             if d.get("timestamp"):
                 ts = dt.datetime.fromisoformat(d["timestamp"].replace("Z", "+00:00")).astimezone()
                 stamp = f"{ts:%H:%M}"
+            # the same words from the same side in the same minute are one message logged twice
+            if not body or (kind, stamp, body) in seen:
+                continue
+            seen.add((kind, stamp, body))
             who = client if kind == "user" else "Cate"
             turns.append((who, stamp, body))
     out = os.path.join(SESSIONS, f"{sid}-transcript.md")
@@ -191,6 +210,9 @@ def cmd_export(args):
         f.write(f"# Session {sid}: word-for-word transcript\n\n")
         f.write("Exported from the conversation log. Tool activity and private reasoning are left out.\n\n")
         for who, stamp, body in turns:
+            if not who:
+                f.write(f"*{body}*\n\n---\n\n")
+                continue
             f.write(f"**{who}** ({stamp})\n\n{body}\n\n---\n\n")
     print(f"Wrote {os.path.relpath(out, ROOT)} ({len(turns)} turns).")
     return True

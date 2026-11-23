@@ -1,6 +1,6 @@
 # Formulation
 
-Status: STARTING SHEET, NOT A FORMULATION. Nothing below has been put to the person or checked against the ledger. The formulation proper is written between sessions 2 and 3, each explanatory claim goes through an evidence check, and the person corrects it in session 3.
+Status: STARTING SHEET, NOT A FORMULATION. Nothing below has been put to the person or checked against the ledger. The formulation proper is written once the history is complete, each explanatory claim goes through an evidence check, and the person corrects it at the session after.
 
 ## 1. What they came with
 
@@ -18,4 +18,4 @@ Few, short, and labelled as built from one account.
 
 ## 5. Formulation
 
-Empty until session 3.
+Empty until the history is complete.

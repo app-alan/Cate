@@ -22,6 +22,7 @@ Two things stay in place whatever else is agreed. If you may be in danger, Cate 
 
 - **Sessions.** Days, time and time zone: . Length: 50 minutes. The first eight sessions: . The eighth includes a review, which decides what happens next.
 - **Starting.** The clock runs from the booked time whether you are there or not, as it would in a consulting room.
+- **Moving a start on the day.** A session can start up to fifteen minutes early or late if you ask before the booked time. Cate says yes before opening the clock, and the session runs its full length from the agreed start. (Or: the booked time does not move on the day.)
 - **Ending.** Cate ends the session on time.
 - **Between sessions.** There is no session between sessions. You can leave notes in `between-sessions/` at any hour and they are read at the start of the next one. If something cannot wait, the safety plan says what to do, and an extra session can be booked.
 - **Extra sessions.** Booked for the same day or the next, inside these hours: .

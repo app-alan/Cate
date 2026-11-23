@@ -1,6 +1,9 @@
 {
   "name": "cate",
-  "owner": { "name": "Alan Howard Butterworth" },
+  "description": "Cate: regular, structured sessions with Claude. Self-directed and private to your computer. Not healthcare.",
+  "owner": {
+    "name": "Alan Howard Butterworth"
+  },
   "plugins": [
     {
       "name": "cate",

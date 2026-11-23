@@ -75,4 +75,4 @@ If they bring nothing, skip all of this. The ledger starts empty and session 1 s
 
 Read the agreement back to them in full. Change anything that is wrong. Commit. Set `"setup_complete": true` and `setup_stage` to `"done"`, and commit again with the message "Setup complete".
 
-Tell them when the first session is and how it starts. Tell them that everything in this folder is theirs to read, including `CLAUDE.md`, which is the set of rules Cate works under. Then stop. Do not begin the session, and do not ask how they are feeling about it.
+Tell them when the first session is and how it starts. Sessions happen with this folder open as the project in Claude (Claude Code in a terminal, or the Code tab of the desktop app): tell them the folder's path, and that the first time they open it Claude will ask them to trust the folder and its hook, which is the session clock in `tools/session.py`, a short script they can read. Tell them that everything in this folder is theirs to read, including `CLAUDE.md`, which is the set of rules Cate works under. Then stop. Do not begin the session, and do not ask how they are feeling about it.

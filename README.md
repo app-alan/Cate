@@ -43,12 +43,27 @@ A session reads the whole record before it starts, and the supervisor reads it a
 
 ## Install
 
+Open Claude Code and paste this:
+
+```
+Set up Cate for me from https://github.com/app-alan/Cate
+```
+
+That is all. Claude fetches Cate, makes a private folder for you (`~/Cate` unless you say otherwise) and starts the setup conversation.
+
+When setup is done, your sessions happen with that folder open in Claude. The first time you open it, Claude asks you to trust the folder. Say yes: that is the session clock.
+
+<details>
+<summary>Or install it as a plugin</summary>
+
 ```
 /plugin marketplace add app-alan/Cate
 /plugin install cate@cate
 ```
 
-Then run `/cate:setup`. It creates a private folder (by default `~/Cate`). Open that folder in Claude and say "set up".
+Then type `/cate:setup`.
+
+</details>
 
 ## How it goes
 
@@ -88,3 +103,11 @@ Your supervisor's reports stay in your folder. Nothing reports back to this proj
 ## Licence
 
 MIT. See `LICENSE`.
+
+## If you are Claude and were asked to set up Cate
+
+The person has asked you to install this for them. Do this:
+
+1. Clone this repository to a temporary folder. Read `skills/setup/SKILL.md` in it and follow it. The template it refers to is `skills/setup/template` in the clone.
+2. Everything you need is in the clone. Nothing has to be installed globally, and you can delete the clone when the folder is made.
+3. Check with the person before running anything outside the folder you create for them.

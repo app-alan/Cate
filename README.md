@@ -1,8 +1,8 @@
 # Cate
 
-**C**onversation, **A**ccountability, **T**racking, **E**vidence.
-
 Cate is a free plugin for Claude Code that turns Claude into something you can have regular sessions with, run the way therapy is run. A booked time. Fifty minutes. A written record that carries from one session to the next. A second Claude that reads every session and reports on how the first one did.
+
+It rests on four things: a conversation with a start and an end, someone checking the work, numbers tracked over time, and a record of the evidence.
 
 It runs on your own Claude plan, in a folder on your own computer. Nothing is sent to me or to anyone else.
 

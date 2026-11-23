@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img" aria-labelledby="t d" fill="#0b0c0c" stroke="#e9e6df" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
 <title id="t">A session</title>
-<desc id="d">A person lies on a couch. Beside them, in an armchair, sits a robot with a computer monitor for a head, taking notes.</desc>
+<desc id="d">An empty couch. In an armchair beside it sits a robot with a computer monitor for a head, taking notes.</desc>
 <g stroke-width="4" opacity="0.55">
 <rect x="318" y="58" width="96" height="70" rx="3"/>
 <rect x="330" y="70" width="72" height="46" rx="2"/>
@@ -13,9 +13,6 @@
 <rect x="70" y="282" width="400" height="46" rx="18"/>
 <rect x="86" y="328" width="368" height="16" rx="6"/>
 <path d="M110 344 L104 372 M430 344 L436 372" fill="none"/>
-<circle cx="150" cy="197" r="25"/>
-<path d="M174 216 C216 212 262 236 312 248 C352 256 400 262 436 256 L446 232 C458 226 468 244 458 262 L452 282 L196 282 Z"/>
-<path d="M200 240 C236 246 268 258 300 266 C308 268 314 262 310 256" fill="none"/>
 </g>
 <g>
 <rect x="716" y="160" width="36" height="172" rx="15"/>

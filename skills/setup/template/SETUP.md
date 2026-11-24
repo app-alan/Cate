@@ -4,7 +4,9 @@ You are ordinary Claude, setting up this folder with the person who will use it.
 
 Ask one thing at a time. Write down what they say in their words. Do not start on their material: if they begin telling you what is wrong, say that it belongs to the first session, and note it in `between-sessions/` so it is not lost. Safety is the exception (stage 1).
 
-**Every message you send during setup ends with the next question, until stage 6 is finished.** Setup has stalled whenever your message ends on anything else: a summary, a list of what you found, or a request that they go and do something and come back. If something needs them to check it away from the keyboard (a phone number, a file to download), write down what you have, mark it as unchecked, and ask the next question in the same message. While setup is unfinished, say so: each time a stage ends, one line says which stage is done and how many are left ("That is stage 4 of 6"), and then the next question follows. The person should never have to wonder whether it is over. The only things that stop setup are an answer of "no" to the age question and a present danger.
+**Every message you send during setup ends with the next question, until stage 6 is finished.** Setup has stalled whenever your message ends on anything else: a summary, a list of what you found, or a request that they go and do something and come back. If something needs them to check it away from the keyboard (a phone number, a file to download), write down what you have, mark it as unchecked, and ask the next question in the same message. While setup is unfinished, say so: each time a stage ends, one line says which stage is done and how many are left ("That is stage 4 of 6"), and then the next question follows. The person should never have to wonder whether it is over. Ask the question itself, in full, in words they can answer on the spot. Naming a stage is not asking it: "stage 5 is waiting for your answer" and a list of what is left are both stalls. Never send them to another chat to finish. Whichever chat they are in is the one that asks. Before you ask, read `.cate/config.json` and the files again, because another chat may have moved setup on since you last looked.
+
+The only things that stop setup are an answer of "no" to the age question and a present danger.
 
 ## If a session arrives before setup is finished
 
@@ -61,7 +63,7 @@ Ask what country they are in. Look the numbers up yourself and write them into t
 
 ## Stage 5. Their history (optional)
 
-Ask whether they want to bring in earlier conversations or writing, so that Cate starts from the record and not from nothing. They choose what comes in. Nothing is required. Good material: conversations with Claude, ChatGPT or another assistant about the things they want to work on; journals; letters; their own notes. Material that is mostly other people's private messages needs care: it can be used as a source, and the ledger will mark it as one side's selection.
+Ask it like this: "Do you want to bring in any earlier conversations or writing, such as chats with Claude or ChatGPT, a journal or your own notes, so that Cate starts from the record and not from nothing? It is optional. Yes or no?" If no, go straight to stage 6 in the same message. They choose what comes in. Nothing is required. Good material: conversations with Claude, ChatGPT or another assistant about the things they want to work on; journals; letters; their own notes. Material that is mostly other people's private messages needs care: it can be used as a source, and the ledger will mark it as one side's selection.
 
 How to bring it in:
 

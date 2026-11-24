@@ -1,6 +1,6 @@
 {
   "name": "cate",
-  "version": "0.2.7",
+  "version": "0.3.0",
   "description": "Regular, structured sessions with Claude, run the way therapy is run: a fixed time, a written record, an evidence check and an independent supervisor. Self-directed and private to your computer. Not healthcare, not a clinician, not for emergencies. Adults only.",
   "author": {
     "name": "Alan Howard Butterworth"

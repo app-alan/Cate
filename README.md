@@ -73,6 +73,8 @@ Then type `/cate:setup`.
 
 **Sessions** start at the time you booked and end fifty minutes later. The first two or three take a proper history. Once that is done, Cate writes down its working understanding of what is going on, with the evidence for and against, and you correct it. The eighth is a review.
 
+**Setup** is about fifteen minutes of short questions, one at a time. A checklist in the folder keeps it moving to the end, and you can stop and come back.
+
 **After each session** Cate writes its notes, updates the record, saves a word-for-word transcript and hands the session to the supervisor.
 
 ## Your privacy

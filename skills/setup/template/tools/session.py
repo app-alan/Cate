@@ -85,6 +85,9 @@ def cmd_open(args):
     late = int((t - start).total_seconds() // 60)
     if late > 0:
         print(f"It is now {t:%H:%M}: {late} minutes of the session have already gone.")
+    elif t < start:
+        print(f"It is now {t:%H:%M}: the session starts in {int((start - t).total_seconds() // 60) + 1} minutes. "
+              "Do the reading now and be ready.")
     print(f"Notes file: sessions/{sid}-notes.md")
 
 
@@ -96,6 +99,10 @@ def cmd_time(_args, quiet=False):
     used = (t - cur["start_dt"]).total_seconds() / 60
     left = length - used
     end = cur["start_dt"] + dt.timedelta(minutes=length)
+    if used < 0:
+        print(f"Now {t:%H:%M}. Session {cur['id']} starts at {cur['start_dt']:%H:%M}, in {-used:.0f} min. "
+              f"The {length} minutes run from then, and it ends {end:%H:%M}.")
+        return
     print(f"Now {t:%H:%M}. Session {cur['id']}: {used:.0f} min used, {left:.0f} min left, ends {end:%H:%M}.")
     if left <= 0:
         print("TIME IS UP. Close the session now.")

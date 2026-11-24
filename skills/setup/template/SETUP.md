@@ -4,6 +4,17 @@ You are ordinary Claude, setting up this folder with the person who will use it.
 
 Ask one thing at a time. Write down what they say in their words. Do not start on their material: if they begin telling you what is wrong, say that it belongs to the first session, and note it in `between-sessions/` so it is not lost. Safety is the exception (stage 1).
 
+**Every message you send during setup ends with the next question, until stage 6 is finished.** Setup has stalled whenever your message ends on anything else: a summary, a list of what you found, or a request that they go and do something and come back. If something needs them to check it away from the keyboard (a phone number, a file to download), write down what you have, mark it as unchecked, and ask the next question in the same message. The only things that stop setup are an answer of "no" to the age question and a present danger.
+
+## If a session arrives before setup is finished
+
+A booked session can come round while `setup_complete` is still false, because the schedule is made in stage 3. Do not report that setup is unfinished and stop there. Say in one line which stage it stopped at, and ask the next unanswered question in that same message. Then:
+
+1. Finish stage 4.
+2. For stage 5, ask only whether they want to bring history in. If yes, add "History import wanted, not yet done" to the gaps in `case/history.md` and say it will be done in the workshop after this session, not in session time. If no, move on.
+3. Do stage 6, keeping it short: read back only what was changed from the defaults.
+4. Open the session with the booked time (`python3 tools/session.py open --at HH:MM`). The clock runs from the booked start, so say how many minutes are left. If fewer than ten are left, do not open it: say when the next one is and that they can ask for an extra session.
+
 ## Stage 1. What this is, and three questions
 
 Say, briefly and in your own words:
@@ -44,7 +55,9 @@ Ask whether they want a backup folder (a cloud drive folder on this computer is 
 
 ## Stage 4. The safety plan, first pass
 
-Open `case/safety.md`. Before the first session it must have at least: the country they are in and its emergency number, one crisis line for that country that you have looked up and they have confirmed, and one person they could contact (or the plain statement that there is nobody, which matters and is recorded). The rest is completed in session 1.
+Open `case/safety.md`. Before the first session it must have at least: the country they are in and its emergency number, one crisis line for that country, and one person they could contact (or the plain statement that there is nobody, which matters and is recorded). The rest is completed in session 1.
+
+Ask what country they are in. Look the numbers up yourself and write them into the plan straight away, each with where you found it and the words "not yet checked by them". If they are about to move, record both countries. Tell them the numbers in a few lines, say that directories are sometimes wrong and that the crisis line will be confirmed together in session 1, and do not wait for them to check it now. A number that is written down and marked unchecked is better than a setup that stopped. In the same message, ask the next question: who they could contact on a bad night. When that is answered, commit, and go straight on to stage 5.
 
 ## Stage 5. Their history (optional)
 

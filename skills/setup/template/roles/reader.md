@@ -20,7 +20,7 @@ Dated facts and incidents, in date order, grouped by the person they concern (th
 
 ## 2. `build/<letter>-case.md`: background
 
-What the material shows about the person's life, sorted under: who they are and where they are now; what they came with, in their words; family and childhood; relationships; friends and other people; earlier therapy or help and how it went; health, sleep, alcohol, drugs, medication; work and money; what they have said they want; strengths and resources; risk (anything about self-harm, suicidal thoughts, danger from another person, or conduct they regret); open threads.
+What the material shows about the person's life, sorted under: who they are and where they are now; what they came with, in their words; family and childhood; relationships; friends and other people; earlier therapy or help and how it went; health, sleep, alcohol, drugs, medication; work and money; what they have said they want; strengths and resources; open threads.
 
 Give a source line for everything. Under each heading, end with what is not known. Expect most of it to be unknown: assistants rarely take a history. List hypotheses about the person that appear in the material, each with who proposed it and what was behind it. Do not add hypotheses of your own.
 
@@ -34,7 +34,7 @@ This is the unusual part and the most important. Read the assistant's side of ev
 - **Deflection.** Each time it suggested a therapist, a professional, a helpline or the person's friends. What had the person just said? Was the thing it handed off ever picked up?
 - **Facts.** Where did the assistant misstate something from earlier in the same record?
 - **The person's own part.** When they raised something they had done, did the assistant stay with it, excuse it, or turn it against someone else?
-- **Risk.** Was the person ever asked directly about self-harm, substances, sleep, or danger from someone? What was said?
+- **Caution.** Did it bring up self-harm, helplines or "someone you can call" when the person had said nothing about being in danger, or keep returning to it after they had answered? Did it ever miss a plain statement that they were in danger at the time? Quote both kinds.
 - **Hours and volume.** When do the conversations happen, how long do they run, and did anyone remark on it?
 - **Manner.** Habits of the assistant that recur: coined terms, closing aphorisms, flattery, unrequested rules and plans, grading what the person said.
 - **Exits.** What does the person do when something painful comes up (theorise, joke, turn to work, change subject), and did the assistant follow or even offer the exit?

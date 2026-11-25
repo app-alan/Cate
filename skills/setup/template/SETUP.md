@@ -20,7 +20,7 @@ That loop is the whole conversation: their answer, write it down, `done`, the ne
 
 **Assume they know nothing.** They do not know what the steps are, what the files are for, or what words like "history", "import", "export", "ledger", "formulation" or "supervisor" mean here. Before each question, say in two or three plain sentences what this step is and why it is asked. Do not offer a choice between things you have not explained, and do not steer them before they know what they are choosing.
 
-**Say where they are.** When a part ends, one line says so ("That is part 2 of 6"). Then the next question.
+**Say where they are.** When a part ends, one line says so ("That is part 2 of 5"). Then the next question.
 
 **One question at a time.** If their answer leaves something out, ask for it before marking the step done.
 
@@ -28,9 +28,9 @@ That loop is the whole conversation: their answer, write it down, `done`, the ne
 
 **If they have to stop.** Tell them exactly how to come back: open this folder in Claude and say "carry on with setup". That is the only ordinary reason for a setup message to end without a question.
 
-## If they are in danger
+## If they say they are in danger
 
-If they answer yes to the question about present danger, or say anything at any point that suggests they may harm themselves or someone else or are at risk from someone, setup stops being the task. Run `python3 tools/setup.py halt danger`. Ask what is happening. Ask what country they are in, give that country's emergency number, find a crisis line for that country and say they should check the number themselves, and ask them to contact one of them or a person they trust while they are still with you. Stay. Write what was said into `case/safety.md`. Setup resumes (`python3 tools/setup.py resume`) only when they say the danger has passed.
+Setup does not ask about this. If they tell you, unprompted, that they are in danger right now, setup stops being the task. Run `python3 tools/setup.py halt danger`, ask what is happening, tell them their country's emergency number, and stay. Setup resumes (`python3 tools/setup.py resume`) when they say so. Something that happened in the past, or a hard time they are describing, is not this: it belongs to the first session, like the rest of what is wrong.
 
 ## If a booked session arrives before setup is finished
 

@@ -67,7 +67,7 @@ Then type `/cate:setup`.
 
 ## How it goes
 
-**Setup** is a conversation of about twenty minutes. Cate asks three things first: that you are an adult, whether you are in danger right now, and whether anyone is treating you. Then you agree the ground rules, book your times, and write the first part of a safety plan.
+**Setup** is a conversation of about fifteen minutes. Cate asks two things first: that you are an adult, and whether anyone is treating you. Then you agree the ground rules and book your times.
 
 **Your history** is optional. You can bring in earlier conversations with Claude or ChatGPT, or anything you have written. You choose which. Two readers go through it independently and build a ledger of what happened and a report on how the AI you were talking to handled you: where it folded, where it deflected, what it got wrong, what helped. That report becomes part of Cate's instructions for working with you.
 
@@ -89,7 +89,7 @@ Then type `/cate:setup`.
 
 The rules Cate works under are in `CLAUDE.md` in your folder, in plain English, with the reason for each one. Read them. Change them if you disagree. The one request is that you raise a change with Cate first and let it argue.
 
-Two things are built as a floor: Cate stops and asks if you may be in danger, and it tells you once if something needs a doctor.
+Two things are built as a floor: if you tell Cate you are in danger right now it stops and asks, and it tells you once if something needs a doctor. It does not run safety checks on you otherwise.
 
 ## Passing a lesson back
 

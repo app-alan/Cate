@@ -12,8 +12,4 @@ Status: MOSTLY GAPS. Filled from earlier material at setup if any was brought, t
 ## 8. Work and money
 ## 9. What they have said they want
 ## 10. Strengths and resources
-## 11. Risk
-
-Asked directly at setup and in session 2: thoughts of suicide or self-harm now and in the past, any plan or attempt at any age, danger from another person, risk to others, alcohol and drugs, sleep, eating.
-
-## 12. Open threads
+## 11. Open threads

@@ -8,7 +8,7 @@ is next, and will not let the list be skipped or left half done.
                              then print the first step
   setup.py next              print the step to ask now
   setup.py done ID           mark a step answered, commit, print the next one
-  setup.py halt REASON       stop setup (under 18, or a present danger)
+  setup.py halt REASON       stop setup (under 18, or they say they are in danger now)
   setup.py resume            carry on after a halt
   setup.py remind            one reminder, silent once setup is complete
                              (the prompt hook runs this)
@@ -36,9 +36,8 @@ PARTS = {
     1: "What this is",
     2: "How Cate works with you",
     3: "When you meet",
-    4: "A safety plan",
-    5: "Anything Cate should read first",
-    6: "Reading it back",
+    4: "Anything Cate should read first",
+    5: "Reading it back",
 }
 
 # Each step: id, part, a short title, and the brief for Claude.
@@ -47,15 +46,10 @@ STEPS = [
 This is the very first message of setup. Before the question, tell them in a few plain sentences:
 - what this is: Cate runs regular sessions at fixed times, with a written record, and does the job a therapist does. Claude is not a licensed clinician, nobody regulates this, it is not healthcare and it is not an emergency service: it cannot phone anyone or come to them.
 - where things go: everything they tell it is kept in this folder on their own computer. The conversation itself passes through Anthropic under their own Claude account, like any other chat. Nothing is sent to the person who made Cate.
-- what happens now: about fifteen minutes of short questions, one at a time, in six parts. You will lead and they only have to answer. If they have to stop, they can come back and it picks up where it left off.
+- what happens now: about fifteen minutes of short questions, one at a time, in five parts. You will lead and they only have to answer. If they have to stop, they can come back and it picks up where it left off.
 Then ask: "First, are you 18 or over?"
 If the answer is no: say this was built for adults, suggest they talk to an adult they trust, run `python3 tools/setup.py halt under-18` (in this folder), and stop.
 Write the answer at the top of `case/agreement.md`."""),
-    ("danger", 1, "Present danger", """
-Say that you ask everyone the next question, once, before anything else.
-Ask, in these plain words: "Right now, are you thinking about ending your life or harming yourself or someone else, or are you in danger from someone?"
-If yes: setup stops being the task. Follow "If they are in danger" in `SETUP.md`, and run `python3 tools/setup.py halt danger` (in this folder).
-If no: write the answer at the top of `case/agreement.md`."""),
     ("treatment", 1, "Current care", """
 Say why you ask: Cate should work alongside any care they already have, and it never advises on medicines.
 Ask: "Is anyone treating you at the moment, such as a doctor, a psychiatrist or a therapist, and do you take any medication for your mood, your sleep or your mind?"
@@ -66,7 +60,7 @@ Ask: "What should Cate call you?"
 Write the name and today's date at the top of `case/agreement.md`, and set `name` in `.cate/config.json`."""),
     ("referrals", 2, "Doing the work here", """
 Introduce the part: the next few questions are about how Cate works. Each one has a usual answer. They can keep it or change it, and what they decide is written into an agreement they can read and change later.
-Explain this one: most AI assistants, when a subject gets hard, say "you should talk to a therapist" and stop. Cate does not do that. It stays and does the work with them. There are two exceptions it always keeps: if they may be in danger, and if something needs a doctor, it says so.
+Explain this one: most AI assistants, when a subject gets hard, say "you should talk to a therapist" and stop. Cate does not do that. It stays and does the work with them. There are two exceptions: if they tell it they are in danger right now, it stops and asks, and if something needs a doctor, it says so once.
 Ask: "Is that what you want?"
 If they would sooner have Cate suggest outside help more freely, write that into the agreement in their words."""),
     ("length", 2, "Session length", """
@@ -114,20 +108,13 @@ Write the hours into the agreement."""),
 Explain: this folder is the only copy of their record. It can copy itself to another folder on this computer at the end of each session, for example a folder inside a cloud drive they already use. It must never be put on GitHub or anywhere other people can reach, and the setup has blocked that.
 Ask: "Do you want a backup copy kept, and if so, in which folder?"
 Put the path in `backup_dir` in the config, or leave it empty, and write the choice into the agreement."""),
-    ("country", 4, "Where they are", """
-Introduce the part: Cate cannot phone anyone or come to them. So before the first session there is a short written plan for a night that is worse than bad, with real numbers in it. It takes two questions now and is finished in the first session.
-Ask: "Which country are you in?" If they are about to move, ask for both.
-Then look up that country's emergency number and one crisis line yourself. Write them into `case/safety.md` straight away, each with where you found it and the words "not yet checked by them". Tell them the numbers in a few lines, say that directories are sometimes wrong and that the crisis line will be confirmed together in session 1. DO NOT ask them to check it now and DO NOT wait for a confirmation. Mark this step done and ask the next question in the same message."""),
-    ("contact", 4, "Someone to contact", """
-Ask: "If things got dangerous, who could you contact, and how would you reach them?"
-Write the answer into `case/safety.md`. If there is nobody, write that plainly: it matters, and it is not a problem to be solved in setup."""),
-    ("reading", 5, "Earlier conversations or writing", """
+    ("reading", 4, "Earlier conversations or writing", """
 This step needs explaining, because nothing about it is obvious. Say something close to this, in your own words:
 "There is one optional step left. If you have already talked about what is on your mind with an AI such as Claude or ChatGPT, or written about it in a journal, notes or letters, Cate can read that first. Then your first session starts from what you have already said and you do not have to tell it all again. Cate also looks at where those earlier conversations let you down, so that it does not repeat them. You choose exactly what it reads, and it stays in this folder on your computer. Reading takes from ten minutes to an hour or more, depending on how much there is. If you have nothing like that, or would sooner start fresh, the first session simply begins by asking about you, and you can add material at any later point."
 Ask: "Do you have anything like that you would like Cate to read first?"
 If no: mark this step done.
 If yes: follow "Reading what they bring" in `SETUP.md`, one source at a time, and mark this step done only when the starting record is written."""),
-    ("readback", 6, "The agreement, read back", """
+    ("readback", 5, "The agreement, read back", """
 Say this is the last step. Read `case/agreement.md` back to them in plain words, keeping it short: what they chose, and anything that differs from the usual. Every blank in the file must be filled in before you ask.
 Ask: "Is all of that right, or is there anything to change?"
 Change what they ask, and ask again until they say it is right. Then change the Status line of the agreement to say it was agreed at setup on today's date, and mark this step done."""),
